@@ -4,13 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ponder Clock</title>
+    <title>Pomodoro Clock</title>
 
+    <!--Style Sheet-->
     <link rel="stylesheet" href="../CSS/main.css">
+
+    <!--JQuery-->
+   <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+
+    
 </head>
 <body>
-    
+    <div class="clock">
 
+        <!-- Section containing the actual clock portion of the application-->
+        <div class="timer">
+            <div class="porgress-radial step-0 session">
+
+                <div class="main-display overlay">
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Section containing what session we're on-->
+        <div class="session-info">
+            <div  class="session-count">
+                
+            </div>
+        </div>
+
+        <!-- Section containing controls for adding and removing time from the session/break-->
+        <div class="settings">
+            <div class="time-session">
+                <h6>Session Time</h6>
+                <p class="time-session-display"></p>
+                <button class="minus">-</button>
+                <button class="plus">+</button>
+            </div>
+            <div class="time-break">
+                 <h6>Break Time</h6>
+                <p class="time-break-display"></p>
+                <button class="minus">-</button>
+                <button class="plus">+</button>
+            </div>
+        </div>
+
+        <!-- Section containing Start and Reset Button-->
+        <div class="controls">
+            <button class="time-start">Start</button>
+            <button class="time-reset">Reset</button>
+        </div>
+    </div>
+
+
+    <!--Custom JS -->
     <script src="../JAVASCRIPT/javascript.js"></script>
 </body>
 </html>

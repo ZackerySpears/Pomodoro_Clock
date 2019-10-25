@@ -1,3 +1,7 @@
-
+body {
+  background-image: linear-gradient(to bottom, gray, blue, green);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 /*# sourceMappingURL=main.css.map */
