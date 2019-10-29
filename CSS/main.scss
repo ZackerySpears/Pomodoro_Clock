@@ -13,8 +13,9 @@ $session-text-color:black;
 $break-text-color:lightpink;
 
 $radial-session-color: lightgrey;
-$radial-break-color:black;
+$radial-break-color:pink;
 $radial-overlay-color:white;
+$radial-bg-color: aqua;
 
 
 html, body {
@@ -148,3 +149,33 @@ body {
         }
     }
 }
+
+//Radial Setup
+$increment: 3.6; //This will be used to calculate the number of degrees the gradient should be angled by
+//For loop in SASS
+@for $i from 0 through 100 {
+    //Making a CSS ruleset for .step-0 all the way through .step-100
+    .step-#{$i} {
+        //If/else statement in SASS
+        @if $i < 50 {
+            //Calculate the angle for our gradient
+            $nextDeg: 90deg + ($increment * $i);
+            &.session {
+                background-image: linear-gradient(90deg, $radial-bg-color 50%, transparent 50%, transparent), linear-gradient($nextDeg, $radial-session-color 50%, $radial-bg-color 50%, $radial-bg-color);
+            }
+            &.break {
+                background-image: linear-gradient(90deg, $radial-bg-color 50%, transparent 50%, transparent), linear-gradient($nextDeg, $radial-break-color 50%, $radial-bg-color 50%, $radial-bg-color);
+            }
+        } @else {
+            $nextDeg: -90deg + ($increment * ($i - 50));
+            &.session {
+                background-image: linear-gradient($nextDeg, $radial-session-color 50%, transparent 50%, transparent), linear-gradient(270deg, $radial-session-color 50%, $radial-bg-color 50%, $radial-bg-color);
+            }
+            &.break {
+                background-image: linear-gradient($nextDeg, $radial-break-color 50%, transparent 50%, transparent), linear-gradient(270deg, $radial-break-color 50%, $radial-bg-color 50%, $radial-bg-color);
+            }
+        }
+    }
+}
+
+
