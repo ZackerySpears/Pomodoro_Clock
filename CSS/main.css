@@ -1,7 +1,123 @@
+html, body {
+  box-sizing: border-box;
+  height: 100%;
+  widows: 100%;
+}
+
 body {
-  background-image: linear-gradient(to bottom, gray, blue, green);
+  background-image: linear-gradient(to bottom, grey, blue, green);
   background-repeat: no-repeat;
   background-attachment: fixed;
+  padding-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+@media (min-height: 500) {
+  body {
+    align-items: center;
+    padding-top: 0;
+  }
+}
+
+.clock {
+  width: 220px;
+  height: auto;
+  margin: 0%;
+  text-align: center;
+  padding: 10px;
+  background-image: linear-gradient(to right, salmon, grey);
+  border-radius: 10px;
+  box-shadow: 0 16px 28px 0 black, 0 25px 55px 0 grey;
+}
+.clock .progress-radial {
+  display: inline-block;
+  position: relative;
+  font-size: 2.2em;
+  width: 6em;
+  padding-bottom: 6em;
+  border-radius: 50%;
+  background-color: lightgrey;
+}
+.clock .progress-radial .overlay {
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  border-radius: 50%;
+  background-color: white;
+  padding-top: 34%;
+  color: black;
+}
+.clock .progress-radial.session .overlay {
+  color: black;
+}
+.clock .progress-radial.break .overlay {
+  color: black;
+}
+
+.session-info, .settings, .controls {
+  color: white;
+}
+
+.settings {
+  border-top: 2px dotted black;
+  border-bottom: 2px dotted black;
+}
+.settings .time-session, .settings .time-break {
+  display: inline-block;
+  padding: 20px;
+}
+.settings .time-session h6, .settings .time-break h6 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.settings .time-session button, .settings .time-break button {
+  background-color: black;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  width: 32px;
+  transition: background-color 0.3s ease-in-out;
+}
+.settings .time-session button:hover, .settings .time-session button:focus, .settings .time-break button:hover, .settings .time-break button:focus {
+  background-color: white;
+  color: black;
+  outline-color: hotpink;
+}
+.settings .time-session .time-session-display, .settings .time-session .time-break-display, .settings .time-break .time-session-display, .settings .time-break .time-break-display {
+  margin-bottom: 8px;
+  margin-top: 0;
+  line-height: 1em;
+}
+.settings .time-session .time-session-display, .settings .time-break .time-session-display {
+  color: black;
+}
+.settings .time-session .time-break-display, .settings .time-break .time-break-display {
+  color: lightpink;
+}
+
+.controls {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.controls button {
+  background-color: black;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-size: 0.9em;
+  height: 40px;
+  width: 70px;
+  margin-left: 15px;
+  margin-right: 15px;
+  transition: background-color 0.5s ease-in-out;
+}
+.controls button:hover, .controls button:focus {
+  background-color: white;
+  color: black;
+  outline-color: hotpink;
 }
 
 /*# sourceMappingURL=main.css.map */

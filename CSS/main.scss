@@ -1,5 +1,150 @@
+$background-gradient-start-color: grey;
+$background-gradient-middle-color: blue;
+$background-gradient-end-color: green;
+
+$card-background-start:salmon;
+$card-background-end:grey;
+$clock-border-radius:10px;
+$card-box-shadow:0 16px 28px 0 black, 0 25px 55px 0 grey;
+
+$main-text-color:white;
+$timer-text-color:black;
+$session-text-color:black;
+$break-text-color:lightpink;
+
+$radial-session-color: lightgrey;
+$radial-break-color:black;
+$radial-overlay-color:white;
+
+
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    widows: 100%;
+}
+
 body {
-    background-image: linear-gradient(to bottom, gray,blue, green);
+    background-image: linear-gradient(to bottom,$background-gradient-start-color,$background-gradient-middle-color, $background-gradient-end-color);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    padding-top:20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    @media (min-height:500) {
+        align-items: center;
+        padding-top: 0;
+    }
+}
+
+.clock {
+    width: 220px;
+    height: auto;
+    margin: 0%;
+    text-align: center;
+    padding:10px;
+    background-image: linear-gradient(to right, $card-background-start, $card-background-end);
+    border-radius: $clock-border-radius;
+    box-shadow: $card-box-shadow;
+
+    .progress-radial {
+        display: inline-block;
+        position: relative;
+        font-size: 2.2em;
+        width: 6em;
+        padding-bottom: 6em;
+        border-radius: 50%;
+        background-color: $radial-session-color;
+
+        .overlay {
+            position: absolute;
+            top: 5%;
+            bottom: 5%;
+            left: 5%;
+            right:5%;
+            border-radius: 50%;
+            background-color: $radial-overlay-color;
+            padding-top: 34%;
+            color: $timer-text-color;
+        }
+
+        &.session .overlay {
+            color: $timer-text-color;
+        }
+
+        &.break .overlay {
+            color: $radial-break-color;
+        }
+    }
+} 
+
+.session-info, .settings, .controls {
+    color: $main-text-color;
+}
+
+.settings {
+    border-top: 2px dotted black;
+    border-bottom: 2px dotted black;
+
+    .time-session, .time-break {
+        display:inline-block;
+        padding: 20px;
+
+        h6 {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        button {
+            background-color: black;
+            border:none;
+            border-radius: 3px;
+            color: $main-text-color;
+            width:32px;
+            transition: background-color 0.3s ease-in-out;
+
+           &:hover, &:focus {
+                background-color: white;
+                color:black;
+                outline-color:hotpink;
+            }
+        }
+
+        .time-session-display, .time-break-display {
+            margin-bottom: 8px;
+            margin-top: 0;
+            line-height: 1em;
+        } 
+
+        .time-session-display {
+            color: $session-text-color;
+        }
+        .time-break-display {
+            color: $break-text-color;
+        }
+    }
+}
+
+.controls {
+    padding-top:20px;
+    padding-bottom:10px;
+
+    button {
+        background-color: black;
+        border: none;
+        border-radius: 3px;
+        color: $main-text-color;
+        font-size: 0.9em;
+        height: 40px;
+        width: 70px;
+        margin-left: 15px;
+        margin-right: 15px;
+        transition: background-color 0.5s ease-in-out;
+
+        &:hover, &:focus {
+            background-color: white;
+            color:black;
+            outline-color:hotpink;
+        }
+    }
 }
