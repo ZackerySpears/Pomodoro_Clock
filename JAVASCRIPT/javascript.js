@@ -37,8 +37,8 @@ function Clock() {
         active = false, //Keeps track of whether the clock is running or not
         _this = this, //Reference to the Clock itself
         timer, //Reference to the interval that we set up to make the timer run
-        startAudio = new Audio("../assets/start.mp3"),
-        endAudio = new Audio("../assets/end.mp3");
+        startAudio = new Audio("../assets/Creepy.mp3"),
+        endAudio = new Audio("../assets/breaktime.mp3");
 
 
         //DISPLAY FUNCTIONS
